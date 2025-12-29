@@ -13,7 +13,7 @@ pnpm install
 ## Usage
 
 ```typescript
-import { utilityFunction } from '@company/utils';
+import { utilityFunction } from "@company/utils";
 ```
 
 ## Development

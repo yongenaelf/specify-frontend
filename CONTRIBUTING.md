@@ -12,12 +12,14 @@ Thank you for your interest in contributing! This guide will help you get starte
 ### Setup
 
 1. **Clone the repository**:
+
    ```bash
    git clone <repository-url>
    cd specify-frontend
    ```
 
 2. **Install dependencies**:
+
    ```bash
    pnpm install
    ```
@@ -32,11 +34,13 @@ Thank you for your interest in contributing! This guide will help you get starte
 ### Step-by-Step Guide
 
 1. **Create package directory**:
+
    ```bash
    mkdir -p packages/new-package/src
    ```
 
 2. **Create `package.json`**:
+
    ```json
    {
      "name": "@company/new-package",
@@ -58,12 +62,14 @@ Thank you for your interest in contributing! This guide will help you get starte
    ```
 
 3. **Create entry point** (`src/index.ts`):
+
    ```typescript
-   export const version = '1.0.0';
+   export const version = "1.0.0";
    // Your exports here
    ```
 
 4. **Create TypeScript config** (`tsconfig.json`):
+
    ```json
    {
      "extends": "../../.config/tsconfig.base.json",
@@ -82,6 +88,7 @@ Thank you for your interest in contributing! This guide will help you get starte
    - Link to related documentation
 
 6. **Register package**:
+
    ```bash
    pnpm install  # Registers new package in workspace
    ```
@@ -105,6 +112,7 @@ Applications go in the `apps/` directory and follow similar structure to package
 ### Running Commands
 
 **From root (all packages)**:
+
 ```bash
 pnpm lint      # Lint all packages
 pnpm test      # Test all packages
@@ -113,12 +121,14 @@ pnpm format    # Format all code
 ```
 
 **For specific package**:
+
 ```bash
 pnpm --filter "@company/ui" test
 pnpm --filter "@company/utils" lint
 ```
 
 **Using convenience scripts**:
+
 ```bash
 pnpm filter:ui test    # Run test on @company/ui
 pnpm filter:utils lint # Run lint on @company/utils
@@ -134,6 +144,7 @@ pnpm filter:utils lint # Run lint on @company/utils
 ### Adding Dependencies
 
 **External dependencies**:
+
 ```bash
 # Add to specific package
 pnpm --filter "@company/ui" add lodash
@@ -143,6 +154,7 @@ pnpm --filter "@company/ui" add -D @types/lodash
 ```
 
 **Internal dependencies** (workspace protocol):
+
 ```json
 {
   "dependencies": {
@@ -168,6 +180,7 @@ pnpm --filter "@company/ui" add -D @types/lodash
 ## Pull Request Process
 
 1. **Create a branch**:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -178,6 +191,7 @@ pnpm --filter "@company/ui" add -D @types/lodash
    - Update documentation
 
 3. **Run checks**:
+
    ```bash
    pnpm lint
    pnpm test
@@ -185,6 +199,7 @@ pnpm --filter "@company/ui" add -D @types/lodash
    ```
 
 4. **Commit changes**:
+
    ```bash
    git add .
    git commit -m "feat: description of changes"

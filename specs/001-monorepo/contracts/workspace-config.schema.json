@@ -12,10 +12,7 @@
         "pattern": "^[^*?]*[*?]?[^*?]*$"
       },
       "minItems": 1,
-      "examples": [
-        ["packages/*", "apps/*"],
-        ["packages/**"]
-      ]
+      "examples": [["packages/*", "apps/*"], ["packages/**"]]
     }
   },
   "required": ["packages"],

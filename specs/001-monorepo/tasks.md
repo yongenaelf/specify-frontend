@@ -127,7 +127,7 @@
 - [x] T046 [US3] Add shared dependency (e.g., lodash) to packages/ui/package.json dependencies in packages/ui/package.json
 - [x] T047 [P] [US3] Add same shared dependency (lodash) to packages/utils/package.json dependencies in packages/utils/package.json
 - [x] T048 [US3] Run pnpm install and verify lodash is hoisted to root node_modules/
-- [x] T049 [US3] Add workspace dependency from packages/ui to packages/utils using "workspace:*" protocol in packages/ui/package.json
+- [x] T049 [US3] Add workspace dependency from packages/ui to packages/utils using "workspace:\*" protocol in packages/ui/package.json
 - [x] T050 [US3] Update packages/ui/src/index.ts to import from @company/utils in packages/ui/src/index.ts
 - [x] T051 [US3] Verify workspace protocol resolves correctly by running type-check or build on packages/ui
 - [x] T052 [US3] Update packages/ui version to "1.1.0" in packages/ui/package.json

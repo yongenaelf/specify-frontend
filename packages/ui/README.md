@@ -13,7 +13,7 @@ pnpm install
 ## Usage
 
 ```typescript
-import { Component } from '@company/ui';
+import { Component } from "@company/ui";
 ```
 
 ## Development

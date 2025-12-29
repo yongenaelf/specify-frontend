@@ -24,23 +24,28 @@ Establish a monorepo structure that organizes multiple packages/applications wit
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
 ### Pre-Design Check (Phase 0)
 
 ### I. Component-First Architecture
+
 ✅ **PASS**: Monorepo structure enables component-first development by organizing packages as self-contained units. Each package can be a reusable component library or application.
 
 ### II. Test-First Development (NON-NEGOTIABLE)
+
 ✅ **PASS**: Shared testing configuration (Jest) will be established. Test infrastructure must be set up before package development begins.
 
 ### III. Integration Testing
+
 ✅ **PASS**: Monorepo structure supports integration testing across packages. Workspace setup enables testing cross-package dependencies and user flows.
 
 ### IV. Observability & Performance
+
 ✅ **PASS**: Performance goals defined (30% install time reduction, <2min linting). Build tooling will support performance monitoring. Logging can be added to workspace scripts.
 
 ### V. Accessibility & User Experience
+
 ⚠️ **N/A**: Infrastructure feature - accessibility applies to packages built within monorepo, not the monorepo structure itself.
 
 **GATE RESULT**: ✅ **PASS** - All applicable constitution principles satisfied.
@@ -50,18 +55,23 @@ Establish a monorepo structure that organizes multiple packages/applications wit
 ### Post-Design Check (Phase 1)
 
 ### I. Component-First Architecture
+
 ✅ **PASS**: Design confirms packages are self-contained units with clear boundaries. Package structure supports component-first development.
 
 ### II. Test-First Development (NON-NEGOTIABLE)
+
 ✅ **PASS**: Shared Jest configuration defined in data model. Quickstart includes test scenarios. Test infrastructure ready before package development.
 
 ### III. Integration Testing
+
 ✅ **PASS**: Quickstart includes cross-package dependency testing (Test Scenario 2). Workspace protocol enables integration testing between packages.
 
 ### IV. Observability & Performance
+
 ✅ **PASS**: Performance goals validated in quickstart scenarios. Dependency hoisting (Test Scenario 4) addresses performance requirements. Build tooling (Vite) supports performance optimization.
 
 ### V. Accessibility & User Experience
+
 ⚠️ **N/A**: Infrastructure feature - accessibility applies to packages built within monorepo, not the monorepo structure itself.
 
 **GATE RESULT**: ✅ **PASS** - Design maintains compliance with all applicable constitution principles. Ready for implementation.
@@ -113,7 +123,7 @@ pnpm-workspace.yaml        # Workspace definition (if using pnpm)
 
 > **Fill ONLY if Constitution Check has violations that must be justified**
 
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+| Violation                  | Why Needed         | Simpler Alternative Rejected Because |
+| -------------------------- | ------------------ | ------------------------------------ |
+| [e.g., 4th project]        | [current need]     | [why 3 projects insufficient]        |
+| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient]  |

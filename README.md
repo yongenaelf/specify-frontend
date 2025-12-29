@@ -22,7 +22,7 @@ tests/             # Infrastructure validation tests
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - pnpm 8+
 
 ### Installation
@@ -80,6 +80,7 @@ pnpm filter:utils lint
 ## Workspace Configuration
 
 This monorepo uses pnpm workspaces. Workspace configuration is defined in:
+
 - `pnpm-workspace.yaml` - Workspace patterns (`packages/*`, `apps/*`)
 - `package.json` - Root workspace configuration with scripts
 
@@ -88,11 +89,13 @@ This monorepo uses pnpm workspaces. Workspace configuration is defined in:
 ### Adding Dependencies
 
 **External dependency**:
+
 ```bash
 pnpm --filter "@company/ui" add lodash
 ```
 
 **Internal dependency** (workspace protocol):
+
 ```json
 {
   "dependencies": {
@@ -104,6 +107,7 @@ pnpm --filter "@company/ui" add lodash
 ### Dependency Hoisting
 
 Shared dependencies are automatically hoisted to root `node_modules/`:
+
 - Reduces disk usage
 - Speeds up installation
 - Ensures consistent versions
@@ -113,6 +117,7 @@ Shared dependencies are automatically hoisted to root `node_modules/`:
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guide.
 
 Quick steps:
+
 1. Create `packages/new-package/` directory
 2. Add `package.json` with scoped name (`@company/new-package`)
 3. Create `src/index.ts` entry point
@@ -123,6 +128,7 @@ Quick steps:
 ## Versioning
 
 Each package maintains **independent versioning**:
+
 - `@company/ui`: v1.1.0
 - `@company/utils`: v1.0.0
 
@@ -142,11 +148,12 @@ See [VERSIONING.md](./VERSIONING.md) for details.
 ✅ **Phase 2.5**: Test infrastructure complete  
 ✅ **Phase 3**: Workspace structure established  
 ✅ **Phase 4**: Shared tooling configured  
-✅ **Phase 5**: Dependency management implemented  
+✅ **Phase 5**: Dependency management implemented
 
 ## Support
 
 For questions or issues:
+
 1. Check documentation files listed above
 2. Review existing packages for examples
 3. Check `.config/README.md` for configuration questions

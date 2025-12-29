@@ -5,11 +5,13 @@ This monorepo uses **independent versioning** for all packages. Each package mai
 ## Version Format
 
 All packages follow [Semantic Versioning](https://semver.org/) (SemVer):
+
 - **MAJOR**: Breaking changes that require consumers to update their code
 - **MINOR**: New features that are backward compatible
 - **PATCH**: Bug fixes that are backward compatible
 
 Example versions:
+
 - `@company/ui`: v1.2.3
 - `@company/utils`: v2.0.1
 
@@ -67,6 +69,7 @@ When packages depend on each other using `workspace:*`:
 ```
 
 The `workspace:*` protocol always resolves to the workspace version, regardless of the version number in the dependent package's `package.json`. This means:
+
 - Version numbers are for **external consumers** and **release tracking**
 - Internal workspace dependencies always use the current workspace version
 - No need to update dependency versions when internal packages change
@@ -94,6 +97,7 @@ cat packages/utils/package.json | grep version
 ## Publishing Considerations
 
 If packages are published to npm:
+
 - Each package is published independently
 - Version numbers in `package.json` are used for npm releases
 - Consumers can install specific versions: `npm install @company/ui@1.2.0`

@@ -22,10 +22,12 @@ npx husky install
 ### pre-commit
 
 Runs before each commit:
+
 - Checks code formatting with Prettier
 - Runs ESLint linting (if available)
 
 To skip hooks (not recommended):
+
 ```bash
 git commit --no-verify
 ```

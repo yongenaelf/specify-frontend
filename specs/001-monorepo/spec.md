@@ -5,7 +5,7 @@
 **Status**: Draft  
 **Input**: User description: "monorepo"
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Basic Monorepo Workspace Structure (Priority: P1)
 
@@ -63,7 +63,7 @@ Developers need efficient dependency management where shared dependencies are ho
 - How does the system handle packages that need different Node.js versions or build tools?
 - What happens when shared tooling configuration conflicts with package-specific needs?
 
-## Requirements *(mandatory)*
+## Requirements _(mandatory)_
 
 ### Functional Requirements
 
@@ -79,15 +79,15 @@ Developers need efficient dependency management where shared dependencies are ho
 - **FR-010**: System MUST support filtering/selecting packages for operations based on criteria:
   - Changed packages: Packages modified since last commit (detected via git diff)
   - Specific tags: Packages tagged with metadata (e.g., "type:library", "type:app") for selective operations
-  - Package name patterns: Wildcard matching (e.g., "@company/ui-*")
+  - Package name patterns: Wildcard matching (e.g., "@company/ui-\*")
 
-### Key Entities *(include if feature involves data)*
+### Key Entities _(include if feature involves data)_
 
 - **Package**: A discrete unit of code (library, application, or tool) within the monorepo. Has its own directory, dependencies, and potentially its own version.
 - **Workspace**: The configuration that defines which directories are considered packages in the monorepo. Managed at the repository root.
 - **Shared Configuration**: Centralized tooling and build configuration that applies to all packages unless overridden.
 
-## Success Criteria *(mandatory)*
+## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 

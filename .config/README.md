@@ -7,12 +7,14 @@ This directory contains shared configuration files that apply to all packages in
 ### ESLint (`eslint.config.js`)
 
 Shared ESLint configuration for code quality and linting:
+
 - Extends `eslint:recommended` and `@typescript-eslint/recommended`
 - Supports TypeScript and modern JavaScript
 - Configurable rules for consistent code style
 
 **Usage in packages:**
 Add to `package.json`:
+
 ```json
 {
   "eslintConfig": {
@@ -24,6 +26,7 @@ Add to `package.json`:
 ### Prettier (`prettier.config.js`)
 
 Shared Prettier configuration for code formatting:
+
 - Consistent formatting rules across all packages
 - Single quotes, semicolons, 2-space indentation
 
@@ -33,12 +36,14 @@ Prettier automatically discovers this config file. No package-specific configura
 ### Jest (`jest.config.js`)
 
 Shared Jest configuration for testing:
+
 - TypeScript support via `ts-jest`
 - Test file patterns: `**/*.test.ts`, `**/*.spec.ts`
 - Coverage collection from `src/**/*.{js,ts}`
 
 **Usage in packages:**
 Create `jest.config.js` in package:
+
 ```js
 module.exports = {
   ...require('../../.config/jest.config.js'),
@@ -49,12 +54,14 @@ module.exports = {
 ### TypeScript (`tsconfig.base.json`)
 
 Base TypeScript compiler options:
+
 - ES2020 target, ESNext modules
 - Strict mode enabled
 - Source maps and declarations
 
 **Usage in packages:**
 Create `tsconfig.json`:
+
 ```json
 {
   "extends": "../../.config/tsconfig.base.json",
@@ -68,12 +75,14 @@ Create `tsconfig.json`:
 ### Vite (`vite.config.base.ts`)
 
 Base Vite build configuration:
+
 - Output directory: `dist`
 - Source maps enabled
 - ESBuild minification
 
 **Usage in packages:**
 Create `vite.config.ts`:
+
 ```typescript
 import { defineConfig } from 'vite';
 import baseConfig from '../../.config/vite.config.base';

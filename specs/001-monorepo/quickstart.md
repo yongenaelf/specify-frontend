@@ -15,6 +15,7 @@
 **Goal**: Verify workspace recognizes packages correctly
 
 **Steps**:
+
 1. Create workspace configuration file (`pnpm-workspace.yaml` or `package.json` with workspaces)
 2. Create at least two packages in `packages/` directory:
    - `packages/ui/package.json` with name `@company/ui`, version `1.0.0`
@@ -23,11 +24,13 @@
 4. Run `pnpm list --depth=0` to see recognized packages
 
 **Expected Result**:
+
 - Both packages appear in workspace
 - Dependencies installed successfully
 - No errors about unrecognized packages
 
 **Validation**:
+
 ```bash
 # Should show both packages
 pnpm list --depth=0
@@ -40,6 +43,7 @@ pnpm list --depth=0
 **Goal**: Verify packages can reference each other using workspace protocol
 
 **Steps**:
+
 1. In `packages/ui/package.json`, add dependency:
    ```json
    {
@@ -51,16 +55,18 @@ pnpm list --depth=0
 2. Run `pnpm install` from root
 3. In `packages/ui/src/index.ts`, import from utils:
    ```typescript
-   import { someUtil } from '@company/utils';
+   import { someUtil } from "@company/utils";
    ```
 4. Build or type-check the ui package
 
 **Expected Result**:
+
 - Dependency resolves correctly
 - No module resolution errors
 - TypeScript/types work correctly
 
 **Validation**:
+
 ```bash
 cd packages/ui
 pnpm build  # or pnpm type-check
@@ -73,6 +79,7 @@ pnpm build  # or pnpm type-check
 **Goal**: Verify packages inherit shared tooling configuration
 
 **Steps**:
+
 1. Create shared ESLint config: `.config/eslint.config.js`
 2. Create shared Prettier config: `.config/prettier.config.js`
 3. In `packages/ui/package.json`, add:
@@ -87,11 +94,13 @@ pnpm build  # or pnpm type-check
 5. Run `pnpm lint` from root
 
 **Expected Result**:
+
 - Linting runs on all packages
 - Shared rules apply correctly
 - Package-specific overrides work if configured
 
 **Validation**:
+
 ```bash
 # From root
 pnpm lint
@@ -105,6 +114,7 @@ pnpm lint
 **Goal**: Verify shared dependencies are hoisted to root
 
 **Steps**:
+
 1. Add same dependency (e.g., `lodash`) to multiple packages:
    - `packages/ui/package.json`: `"lodash": "^4.17.21"`
    - `packages/utils/package.json`: `"lodash": "^4.17.21"`
@@ -112,11 +122,13 @@ pnpm lint
 3. Check `node_modules/` structure
 
 **Expected Result**:
+
 - `lodash` installed once at root `node_modules/`
 - Packages can still import `lodash` correctly
 - Disk usage reduced compared to separate installs
 
 **Validation**:
+
 ```bash
 # Check hoisting
 ls -la node_modules/ | grep lodash
@@ -130,6 +142,7 @@ ls -la node_modules/ | grep lodash
 **Goal**: Verify packages maintain independent versions
 
 **Steps**:
+
 1. Ensure packages have different versions:
    - `packages/ui`: version `1.0.0`
    - `packages/utils`: version `2.1.0`
@@ -137,11 +150,13 @@ ls -la node_modules/ | grep lodash
 3. Verify `packages/utils` version remains `2.1.0`
 
 **Expected Result**:
+
 - Each package version updates independently
 - No cross-package version synchronization
 - Version changes don't affect other packages
 
 **Validation**:
+
 ```bash
 # Check versions
 cat packages/ui/package.json | grep version
@@ -156,16 +171,19 @@ cat packages/utils/package.json | grep version
 **Goal**: Verify commands can run across all packages or target specific packages
 
 **Steps**:
+
 1. Add a script to all packages: `"test": "jest"`
 2. Run `pnpm --filter "./packages/*" test` to test all packages
 3. Run `pnpm --filter "@company/ui" test` to test specific package
 
 **Expected Result**:
+
 - Commands execute on filtered packages
 - Output shows which packages ran
 - Exit codes reflect success/failure per package
 
 **Validation**:
+
 ```bash
 # Test all packages
 pnpm --filter "./packages/*" test
@@ -181,17 +199,20 @@ pnpm --filter "@company/ui" test
 **Goal**: Verify adding a new package follows documented process
 
 **Steps**:
+
 1. Create new package directory: `packages/new-package/`
 2. Create `packages/new-package/package.json` with name and version
 3. Run `pnpm install` from root
 4. Verify package is recognized
 
 **Expected Result**:
+
 - New package appears in workspace
 - Can run commands targeting new package
 - Follows same structure as existing packages
 
 **Validation**:
+
 ```bash
 # Should recognize new package
 pnpm list --depth=0 | grep new-package

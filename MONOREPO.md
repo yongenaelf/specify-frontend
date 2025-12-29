@@ -31,6 +31,7 @@ Contains shared libraries that can be used across multiple applications:
 - **@company/utils**: Shared utility functions
 
 Each package:
+
 - Has its own `package.json` with unique scoped name
 - Maintains independent versioning
 - Can depend on other packages using workspace protocol
@@ -43,11 +44,13 @@ Contains applications that consume packages. Applications are full-featured apps
 ## Adding a New Package
 
 1. **Create package directory**:
+
    ```bash
    mkdir -p packages/new-package/src
    ```
 
 2. **Create package.json**:
+
    ```json
    {
      "name": "@company/new-package",
@@ -92,7 +95,7 @@ This ensures packages reference each other correctly within the monorepo.
 The workspace protocol allows packages to reference each other without needing to know exact versions. When you import from an internal package:
 
 ```typescript
-import { utilityFunction } from '@company/utils';
+import { utilityFunction } from "@company/utils";
 ```
 
 TypeScript and the build system resolve this using the workspace protocol, ensuring you always get the current workspace version regardless of version numbers in package.json.
@@ -102,6 +105,7 @@ TypeScript and the build system resolve this using the workspace protocol, ensur
 **Example: packages/ui depends on packages/utils**
 
 1. Add dependency in `packages/ui/package.json`:
+
    ```json
    {
      "dependencies": {
@@ -111,8 +115,9 @@ TypeScript and the build system resolve this using the workspace protocol, ensur
    ```
 
 2. Import in code:
+
    ```typescript
-   import { utilityFunction } from '@company/utils';
+   import { utilityFunction } from "@company/utils";
    ```
 
 3. Run `pnpm install` to link packages
@@ -122,17 +127,20 @@ TypeScript and the build system resolve this using the workspace protocol, ensur
 ## Versioning Strategy
 
 Each package maintains **independent versioning**:
+
 - Packages can evolve at different rates
 - Version updates don't affect other packages
 - Follow semantic versioning (MAJOR.MINOR.PATCH)
 
 Example:
+
 - `@company/ui`: v1.2.3
 - `@company/utils`: v2.0.1
 
 ## Shared Configuration
 
 All packages inherit shared configuration from `.config/`:
+
 - **ESLint**: Code quality and linting rules
 - **Prettier**: Code formatting
 - **Jest**: Testing configuration
@@ -165,6 +173,7 @@ pnpm --filter "@company/ui" test
 ## Workspace Recognition
 
 The workspace recognizes packages through:
+
 - `pnpm-workspace.yaml` - Defines workspace patterns (`packages/*`, `apps/*`)
 - `package.json` workspaces field - Alternative workspace configuration
 

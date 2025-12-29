@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 #### Infrastructure
+
 - Initial monorepo structure with pnpm workspaces
 - Workspace configuration (`pnpm-workspace.yaml`, `package.json` workspaces)
 - Shared configuration directory (`.config/`) with:
@@ -20,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Vite base configuration
 
 #### Packages
+
 - **@company/ui** (v1.1.0): Shared UI component library
   - Initial package structure
   - TypeScript entry point
@@ -29,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - TypeScript entry point
 
 #### Documentation
+
 - `README.md`: Main project documentation
 - `MONOREPO.md`: Detailed monorepo structure and organization
 - `CONTRIBUTING.md`: Contribution guidelines
@@ -36,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.config/README.md`: Shared configuration documentation
 
 #### Testing
+
 - Infrastructure validation tests:
   - Workspace package recognition tests
   - Dependency hoisting validation tests
@@ -43,6 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Shared config inheritance tests
 
 #### CI/CD
+
 - GitHub Actions workflow for linting and testing
 - Pre-commit hooks configuration structure
 
@@ -58,6 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Scripts
 
 Root-level scripts:
+
 - `pnpm lint`: Lint all packages
 - `pnpm test`: Test all packages
 - `pnpm build`: Build all packages
