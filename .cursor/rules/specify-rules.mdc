@@ -1,0 +1,29 @@
+# specify-frontend Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2025-12-29
+
+## Active Technologies
+
+- JavaScript/TypeScript (Node.js 18+ for tooling, modern ES2020+ for packages) + pnpm (package manager with workspace support), Vite (build tooling), Jest (testing), ESLint (linting), Prettier (formatting) (001-monorepo)
+
+## Project Structure
+
+```text
+src/
+tests/
+```
+
+## Commands
+
+npm test && npm run lint
+
+## Code Style
+
+JavaScript/TypeScript (Node.js 18+ for tooling, modern ES2020+ for packages): Follow standard conventions
+
+## Recent Changes
+
+- 001-monorepo: Added JavaScript/TypeScript (Node.js 18+ for tooling, modern ES2020+ for packages) + pnpm (package manager with workspace support), Vite (build tooling), Jest (testing), ESLint (linting), Prettier (formatting)
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->

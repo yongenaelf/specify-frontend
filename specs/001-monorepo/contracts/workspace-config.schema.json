@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Monorepo Workspace Configuration",
+  "description": "Schema for workspace configuration files (pnpm-workspace.yaml, package.json workspaces)",
+  "type": "object",
+  "properties": {
+    "packages": {
+      "type": "array",
+      "description": "Glob patterns matching package directories",
+      "items": {
+        "type": "string",
+        "pattern": "^[^*?]*[*?]?[^*?]*$"
+      },
+      "minItems": 1,
+      "examples": [
+        ["packages/*", "apps/*"],
+        ["packages/**"]
+      ]
+    }
+  },
+  "required": ["packages"],
+  "additionalProperties": false
+}

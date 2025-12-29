@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run linting and formatting checks before commit
+echo "Running pre-commit checks..."
+
+# Check formatting
+pnpm format:check || {
+  echo "❌ Code formatting check failed. Run 'pnpm format' to fix."
+  exit 1
+}
+
+# Run linting (if ESLint is installed)
+if command -v eslint >/dev/null 2>&1; then
+  pnpm lint || {
+    echo "❌ Linting failed. Please fix linting errors."
+    exit 1
+  }
+fi
+
+echo "✅ Pre-commit checks passed"
