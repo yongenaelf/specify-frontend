@@ -1,0 +1,21 @@
+{
+  "name": "@company/utils",
+  "version": "1.0.0",
+  "description": "Shared utility functions",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "echo 'Build script not yet configured'",
+    "test": "echo 'Test script not yet configured'",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "eslintConfig": {
+    "extends": "../../.config/eslint.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

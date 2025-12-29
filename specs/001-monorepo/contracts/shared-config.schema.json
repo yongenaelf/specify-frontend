@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Shared Configuration Schema",
+  "description": "Schema for shared tooling configuration files",
+  "type": "object",
+  "properties": {
+    "eslint": {
+      "type": "object",
+      "description": "Shared ESLint configuration",
+      "properties": {
+        "extends": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rules": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "prettier": {
+      "type": "object",
+      "description": "Shared Prettier configuration",
+      "additionalProperties": true
+    },
+    "jest": {
+      "type": "object",
+      "description": "Shared Jest configuration",
+      "properties": {
+        "preset": {
+          "type": "string"
+        },
+        "testMatch": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "typescript": {
+      "type": "object",
+      "description": "Shared TypeScript base configuration",
+      "properties": {
+        "compilerOptions": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "extends": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "vite": {
+      "type": "object",
+      "description": "Shared Vite build configuration",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

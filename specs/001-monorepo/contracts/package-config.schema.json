@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Monorepo Package Configuration",
+  "description": "Schema for package.json files within monorepo packages",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Package name, typically scoped",
+      "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$",
+      "examples": ["@company/ui", "@company/utils", "my-package"]
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version (independent versioning)",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.-]+)?(\\+[a-zA-Z0-9.-]+)?$",
+      "examples": ["1.0.0", "2.1.3", "1.0.0-beta.1"]
+    },
+    "workspaceDependencies": {
+      "type": "object",
+      "description": "Internal package dependencies using workspace protocol",
+      "patternProperties": {
+        "^@[a-z0-9-~][a-z0-9-._~]*/[a-z0-9-~][a-z0-9-._~]*$": {
+          "type": "string",
+          "pattern": "^workspace:(\\*|\\^|~|\\d+\\.\\d+\\.\\d+)$",
+          "examples": ["workspace:*", "workspace:^1.0.0"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "dependencies": {
+      "type": "object",
+      "description": "External npm dependencies",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "devDependencies": {
+      "type": "object",
+      "description": "Development dependencies",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "peerDependencies": {
+      "type": "object",
+      "description": "Peer dependencies",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "exports": {
+      "type": "object",
+      "description": "Package exports configuration (ESM/CJS)",
+      "additionalProperties": true
+    },
+    "scripts": {
+      "type": "object",
+      "description": "Package-specific npm scripts",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["name", "version"],
+  "additionalProperties": true
+}
